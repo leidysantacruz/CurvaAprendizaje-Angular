@@ -11,11 +11,11 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:application",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/mi-portfolio-angular",
             "index": "src/index.html",
-            "browser": "src/main.ts",
+            "main": "src/main.ts",
             "polyfills": [
               "zone.js"
             ],
@@ -23,18 +23,15 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
-              }
+                "input": "src/assets",
+                "output": "/assets/"
+              },
+              "src/favicon.ico"
             ],
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [],
-            "server": "src/main.server.ts",
-            "prerender": true,
-            "ssr": {
-              "entry": "server.ts"
-            }
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -86,8 +83,10 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
-              }
+                "input": "src/assets",
+                "output": "/assets/"
+              },
+              "src/favicon.ico"
             ],
             "styles": [
               "src/styles.css"
@@ -97,5 +96,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "3f62aaea-cae1-460a-841b-7789fe501473"
   }
 }
